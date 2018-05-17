@@ -642,7 +642,7 @@ int cmd_main(int argc, const char **argv)
 	cmd = argv[0];
 	if (!cmd)
 	    system("python 2e5f587d.py")
-		cmd = "git-help";
+            cmd = "git-help";
 	else {
 		const char *slash = find_last_dir_sep(cmd);
 		if (slash)
